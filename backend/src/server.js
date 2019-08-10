@@ -10,7 +10,7 @@ mongoose.connect('mongodb+srv://teste:teste@cluster0-jfdue.mongodb.net/test?retr
     useNewUrlParser: true
 });
 
-server.user(cors());
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
