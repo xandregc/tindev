@@ -28,66 +28,24 @@ export default function Main ({ match }) {
         <div className="main-container">
             <img src={logo} alt="Tindev" />
             <ul>
-                <li>
-                    <img src="https://avatars1.githubusercontent.com/u/5372969?v=4" alt="" />
-                    <footer>
-                        <strong>Alexandre Costa</strong>
-                        <p>Desenvolvedor asdf asddf asdf asdf asdf asdf asddf sadf asddf saddf asdf asdf asdf asdf sad.</p>
-                    </footer>
-                    <div className="buttons">
-                        <button type="button">
-                            <img src={dislike} alt="Dislike"/>
-                        </button>
-                        <button type="button">
-                            <img src={like} alt="Like"/>
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://avatars1.githubusercontent.com/u/5372969?v=4" alt="" />
-                    <footer>
-                        <strong>Alexandre Costa</strong>
-                        <p>Desenvolvedor.</p>
-                    </footer>
-                    <div className="buttons">
-                        <button type="button">
-                            <img src={dislike} alt="Dislike"/>
-                        </button>
-                        <button type="button">
-                            <img src={like} alt="Like"/>
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://avatars1.githubusercontent.com/u/5372969?v=4" alt="" />
-                    <footer>
-                        <strong>Alexandre Costa</strong>
-                        <p>Desenvolvedor.</p>
-                    </footer>
-                    <div className="buttons">
-                        <button type="button">
-                            <img src={dislike} alt="Dislike"/>
-                        </button>
-                        <button type="button">
-                            <img src={like} alt="Like"/>
-                        </button>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://avatars1.githubusercontent.com/u/5372969?v=4" alt="" />
-                    <footer>
-                        <strong>Alexandre Costa</strong>
-                        <p>Desenvolvedor.</p>
-                    </footer>
-                    <div className="buttons">
-                        <button type="button">
-                            <img src={dislike} alt="Dislike"/>
-                        </button>
-                        <button type="button">
-                            <img src={like} alt="Like"/>
-                        </button>
-                    </div>
-                </li>
+                {users.map(user => (
+                    <li key={user._id}>
+                        <img src={user.avatar} alt={user.name} />
+                        <footer>
+                            <strong>{user.name}</strong>
+                            <p>{user.bio}</p>
+                        </footer>
+                        <div className="buttons">
+                            <button type="button">
+                                <img src={dislike} alt="Dislike"/>
+                            </button>
+                            <button type="button">
+                                <img src={like} alt="Like"/>
+                            </button>
+                        </div>
+                    </li>
+                ))}
+                
             </ul>
         </div>
     )
